@@ -170,8 +170,8 @@ a:hover{cursor:pointer; color:Blue; }
 #felt-fabric-2{display:grid; grid-area: fabric2;}
 
 #coat-1-image{ background-image: url(../img/IMG_0073.jpg);}
-#coat-2-image{background-image: url(../img/IMG_0316b.jpg);}
-#coat-3-image{background-image: url(../img/IMG_0345.jpg); }
+#coat-2-image{background-image: url(../img/IMG_0316.jpg);}
+#coat-3-image{background-image: url(../img/IMG_0345b.jpg); background-position-x: 65%;}
 #bag-1-image{background-image: url(../img/IMG_0266.jpg);background-position-y: 65%;}
 #bag-2-image{background-image: url(../img/IMG_0271.jpg);background-position-y: 65%;}
 #bag-3-image{background-image: url(../img/IMG_0268.jpg);background-position-y: 65%;}
