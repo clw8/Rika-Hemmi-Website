@@ -34,5 +34,34 @@ closeButton.addEventListener("click", function(){
 );
 
 
+//MODAL POPUP ARROWS
+var slideshow= ["garment-1-image", "fabric-2-image", "garment-2-image", "coat-2-image", "coat-1-image", "coat-3-image", "bag-2-image", "fabric-1-image", "shoes-2-image", "shoes-1-image", "bag-1-image", "bag-3-image", "bag-4-image"];
+var leftArrow=document.getElementById("left-arrow");
+var rightArrow=document.getElementById("right-arrow");
+leftArrow.addEventListener("click", function(){
+
+	for (a=0; a<slideshow.length; a++){
+	if($(".modal-content").attr("id")==slideshow[a]){
+		if($(".modal-content").attr("id")==slideshow[0])
+			{$(".modal-content").attr("id", slideshow[slideshow.length - 1]);}
+		$(".modal-content").attr("id", slideshow[a - 1]);
+		 }
+	
+	}
+});
+
+rightArrow.addEventListener("click", function(){
+
+	for (a=slideshow.length; a>=0; a--){
+	if($(".modal-content").attr("id")==slideshow[a]){
+
+		if($(".modal-content").attr("id")==slideshow[slideshow.length - 1])
+			{$(".modal-content").attr("id", slideshow[0]);}
+		$(".modal-content").attr("id", slideshow[a + 1]);
+		 }
+	
+	}
+});
+
 
 main();
