@@ -199,7 +199,7 @@ header h1{float:left; margin:0;display:inline; /*padding-left:15px; padding-righ
 #contact{margin-top:4%;margin-bottom:4%; display:flex; align-items:center;}
 
 
-footer{background-image: url(../img/footer.png);background-position: right top; background-size: cover; padding-top: 48px; width:100%; height: auto; min-height: 8vh; color:white; font-size:16px; display:flex;}
+footer{overflow:hidden;background-image: url(../img/footer.png);background-position: right top; background-size: cover; padding-top: 48px; width:100%; height: auto; min-height: 8vh; color:white; font-size:16px; display:flex;}
 footer div {margin-top:3.5vh; }
 footer ul li {display:block; margin:auto;align-text:center;}
 footer ul {margin:8px;}
