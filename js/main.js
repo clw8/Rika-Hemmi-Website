@@ -2,7 +2,7 @@ var main = function(){
 
 //HERO IMAGES
 var counter=0;
-var backgroundimages = ["url(img/IMG_0073.jpg)", "url(img/IMG_0345b.jpg)", "url(img/IMG_0316.jpg)"]
+var backgroundimages = ["url(img/IMG_0073.jpg)", "url(img/IMG_0345b.jpg)", "url(img/IMG_0271b.jpg)"]
 function changebgImage () {
 	
 	if(counter===backgroundimages.length-1){counter=0;}
@@ -24,8 +24,14 @@ setInterval(changebgImage, 7000);
 function clicked (clickedImage) {
 $(".modal-content").attr("id", clickedImage.id);
 $(".modal-popup").removeClass("closed");
-$(".modal-popup").addClass("active");}
+$(".modal-popup").addClass("active");};
 
+var closeButton=document.getElementById("close-button");
+closeButton.addEventListener("click", function(){
+	$(".modal-popup").removeClass("active");
+	$(".modal-popup").addClass("closed");
+}
+);
 
 
 
