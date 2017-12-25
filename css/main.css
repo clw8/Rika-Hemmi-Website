@@ -232,8 +232,8 @@ top:55px; float:right;
     width: 80%;
     max-width: 700px;
 	height:60vh;
- 
-background-position: center top; background-size:contain; background-repeat:no-repeat;
+ overflow:hidden;
+background-position: center center; background-size:contain; background-repeat:no-repeat;
 }
 .active {display: block;}
 .closed {display:none;}
