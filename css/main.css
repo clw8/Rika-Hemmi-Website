@@ -212,7 +212,7 @@ top:55px; float:right;
 /*SHEEP LIFE PAGE*/
 #article {cursor: pointer; width:85%; border: 1px solid; border-radius: 4px; display:block; margin:auto; margin-top: 3vh; }
 #article-zoom{cursor: pointer;}
-#kakudai {width:100%; margin-left:35vw;}
+#kakudai {text-align:right;}
 .flex-image {display:block; margin:1vw;  border-radius:1.5px; border:1px solid; width:50%; max-width: 360px;}
 .flex-image:hover {cursor:pointer;transform:scale(1.4); transition: 0.3s;}
 #header-border{height: 2.6vh;width:68%; border-bottom: 1.5px solid; margin:auto; margin-top:2vh;}
