@@ -16,15 +16,6 @@ html {
     line-height: 1.4;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
 
 ::-moz-selection {
     background: #b3d4fc;
@@ -49,11 +40,6 @@ hr {
     padding: 0;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
 
 audio,
 canvas,
@@ -101,18 +87,14 @@ textarea {
 
 
 
-html body {width:100%; background-color: rgb(255, 248, 245); height:100%; min-height: 100%;}
+html body {width:100%; background-color: rgb(255, 248, 245); height:100%; min-height: 100%; margin: 0;}
 main{width:100%; margin:auto; height:100%;}
 .half-width{margin-top:4%; width:45%; text-align:center; }
 ul{list-style:none; padding:0; }
-h2{ display:inline;  /*box-shadow: 2px 2px;background-color: #5a5c51; */border-radius: 1.5px; margin-left:0px; margin-top:0px;margin-bottom: 0px; font-size: 1.4em; width:40%; min-width:200px;}
-.contact-header{ }
-h2>span {margin-left: 3%;margin-right: 3%; padding:5px;}
-span{font-weight:800;}
+
+.bold{font-weight:800;}
 a{text-decoration:none; color:black;}
 a:hover{cursor:pointer; color:LightBlue; }
-
-
 
 header{width:85%; overflow:auto; margin:auto;}
 #header-bar{width:100%;
@@ -121,24 +103,25 @@ header{width:85%; overflow:auto; margin:auto;}
 #header-bar img {height:60px; margin-left:2vh; margin-top:0;}
 #herowrapper{ max-width:1052px; background-repeat: no-repeat; 
 	margin:auto; 
-	background-image: url(../img/IMG_0073.jpg);
 	height:85.5vh;
 	background-position:center top;
-	background-size:cover; 
+	background-size:cover;
+	border-radius:2px; 
+	background:none;
 	}
 img#hero{width:100%; margin:auto; display:none;}
 
-.main-wrapper {/*width:85%; max-width:1052px; background:#c9c9c9;*/ border-radius: 2px;  margin:auto;margin-bottom:1vh; padding-bottom:1px;}
+.main-wrapper {border-radius: 2px;  margin:auto;margin-bottom:1vh; padding-bottom:1px;}
 #border{height: 2.6vh;width:68%; border-bottom: 1.5px solid; margin:auto;}
-.main-wrapper #border { width:68%;}
+.main-wrapper #border {width:68%;}
 
 #rika-text { width: 85%; max-width:1052px;margin:auto; padding-top:1.5vh; margin-top:0.5%; }
-#rika-text p {margin: auto; line-height:35px;  width: 97%; /*background:#b1b1b2; border-radius: 8px; */padding:3px;}
+#rika-text p {margin:auto;line-height:35px;  width: 97%; margin-left:3px;}
 
 
 /*MAIN PAGE PHOTOS*/
 .grid-container {margin-top:3%; margin-bottom:2%; display:grid;   grid-template-columns: repeat(7, 1fr); justify-items:center;
-	grid-auto-rows:  12.5vh;
+	grid-auto-rows:  12.5vh;grid-gap:2vh;
 
 	grid-template-areas: ". garm1 garm1 garm2 coat1 coat1 ."
 			      ". garm1 garm1 coat2 coat1 coat1 ."
@@ -147,9 +130,9 @@ img#hero{width:100%; margin:auto; display:none;}
 				". coat3 bag2 bag2 shoes1 shoes1 ."
 				". bag1 bag3 bag4 shoes1 shoes1 .";
 
-grid-gap:2vh;
+
 				 }
-.grid-image-container {overflow:hidden; background-color: white; width:100%; border:1px solid; border-radius:1.5px;}
+.grid-image-container {overflow:hidden; background-color: white; width:100%;  border-radius:1.5px;}
 .grid-image { cursor:pointer;  padding:4px; background-position: center top; background-size:cover; background-repeat:no-repeat;}
 
 .grid-image:hover{opacity: 0.7;}
@@ -188,35 +171,32 @@ grid-gap:2vh;
 nav{float:right; width:75%; margin-right:0px; padding:0px; }
 nav li{ font-size:16px; display:inline-block; text-align:right; padding-right:2vw}
 nav ul {margin:2vh; display:flex; flex-flow:row wrap;justify-content:flex-end; margin-top: 30px; }
-header h1{float:left; margin:0;display:inline; /*padding-left:15px; padding-right:15px; margin-top: 3px;font-size:1.5em; border: 1.5px solid; border-radius:4.5px;*/}
+header h1{float:left; margin:0;display:inline;}
  
 
 .flex-wrapper1{ width:85%; padding-left:6%;margin:auto; margin-top: 2%; margin-bottom: 2%; display:flex; flex-flow: row wrap; justify-content:center;}
-.flex-wrapper2{ width:85%; margin:auto; margin-top: 2%; margin-bottom: 2%; display:flex; flex-flow: row wrap; justify-content:center;}
+.flex-wrapper2{ width:85%; margin:auto; margin-top: 2%;  display:flex; flex-flow: row wrap; justify-content:center;}
 #contact-image{ width:75%; padding:auto; margin-right: 8%; max-width: 340px; min-width:100px;border:1px solid; border-radius:1.5px;margin-left:5vw;}
 #contact{margin-top:4%;margin-bottom:4%; display:flex; align-items:center;}
 
-
-footer{overflow:hidden;background-image: url(../img/footer.png);background-position: right top; background-size: cover; padding-top: 48px; width:100%; height: auto; min-height: 8vh; color:white; font-size:16px; display:flex;}
-footer div {margin-top:3.5vh; }
+/*FOOTER*/
+footer{overflow:hidden;background-image: url(../img/footer.png);background-position: right top; background-size: cover; padding-top: 4vw; margin-top: 3vh; width:100%; height: auto; min-height: 8vh; color:white; font-size:16px;}
 footer ul li {display:block; margin:auto;align-text:center;}
 footer ul {margin:8px;}
 ul{text-align:center;}
-footer ul li # {align-text:right; margin:0;
-}
-#footer-div {margin-left:auto;margin-right:auto;}
-#share-button{height:10px; margin:auto;position: relative;
-top:55px; float:right;
-}
+#to-top{float:left; padding-left: 1%; position:relative; bottom:30px;}
+#rika-logo-footer{max-height: 35px;}
+#footer-div {background-color: rgb(141, 166, 174); margin-left:auto;margin-right:auto; margin-top: 2vh; padding-top: 10px; margin-bottom:5px; }
+#share-button{float:right; margin-right:2%; position:relative; top:160px;}
 
 /*SHEEP LIFE PAGE*/
 #article {cursor: pointer; width:85%; border: 1px solid; border-radius: 4px; display:block; margin:auto; margin-top: 3vh; }
 #article-zoom{cursor: pointer;}
 #kakudai {text-align:right;}
 .flex-image {
-  display:block; margin:1vw;  border-radius:1.5px; border:1px solid; width:80%; height:100%; }
+  display:block; margin:1vw;  border-radius:1.5px; width:90%; height:90%; }
 .imagewrapper {width:33%; display:flex; justify-content:center; margin: 2vh 0 2vh 0;}
-.flex-image:hover {cursor:pointer;transform:scale(1.4); transition: 0.3s;}
+/*.flex-image:hover {cursor:pointer;transform:scale(1.4); transition: 0.3s;}*/
 #header-border{height: 2.6vh;width:68%; border-bottom: 1.5px solid; margin:auto; margin-top:2vh;}
 
 
@@ -272,8 +252,63 @@ left:78vw;
 }
 
 
-/*ZOOM IMAGE*/
-.zoomImg {position:relative; overflow:hidden; border:1px solid;}
+/*LOADING PROGRESS SVG*/
+
+#loading-bar{
+width:30vw;
+margin:auto;
+position:relative;
+top: 38vh;
+right:1.5vw;
+}
+
+.pen1 {
+  fill: none;
+  stroke:url(#linearGradient5123);
+  stroke-linecap: round;
+  clip-path: url(#loadingBarpt1);
+stroke-width:2;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation-duration: 2s;
+  animation-name: draw;
+  animation-iteration-count: 1;
+  animation-direction: forward;
+  animation-timing-function: cubic-bezier(.49,.02,.51,1);
+animation-fill-mode: forwards;
+}
+
+.pen2{ fill: none;
+  stroke:url(#linearGradient5123);
+  stroke-linecap: round;
+  clip-path: url(#loadingBarpt2);
+	stroke-width:2;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation-duration: 2s;
+animation-delay: 1.52s;
+  animation-name: draw;
+  animation-iteration-count: 1;
+  animation-direction: forward;
+  animation-timing-function: cubic-bezier(.49,.02,.51,1);
+animation-fill-mode: forwards;
+}
+
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 150;
+	stroke-opacity:1;
+	
+  }
+
+
+
+ 100% {
+    stroke-dashoffset: 0;
+stroke-opacity:1;
+  }
+}
 
 
 
@@ -289,10 +324,10 @@ header{width:98%;}
 nav ul li a{font-size:14px;}
 
 #contact-image{margin:0px;}
-footer{width:100%; font-size:14px;}
-#rika-text p {line-height:28px; width:100%;padding:2px; }
+footer{width:100%; font-size:14px; }
+#rika-text p {line-height:28px; width:100%; }
 #rika-text {width:100%;}
-.grid-container {  grid-template-columns: 1vh 1fr 1fr 1fr 1fr 1fr 1vh; justify-items:center;
+.grid-container {  grid-template-columns: 0 1fr 1fr 1fr 1fr 1fr 0; justify-items:center;
 	grid-auto-rows: 10vh;}
 #contact h2 {font-size:18px;}
 #contact p, a {font-size:16px;}
@@ -312,8 +347,9 @@ nav {width:50%;}
 nav ul {flex-flow:column; margin:0;}
 #article {width:100%}
 .flex-image {width:100%;}
-#header-bar{height: 72px;}}
-
+#header-bar{height: 72px;}
+footer{padding-top: 30px;}
+#share-button{margin:0; top: 160px;}
 
 
 

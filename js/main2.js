@@ -6,4 +6,11 @@ $(document).ready(function(){
     .css('display', 'block')
     .parent()
     .zoom({on:"grab"});
+
+ var date = new Date().getFullYear();
+ $('<li>').text(`© ${date} Piwka. All rights reserved.`).appendTo('footer ul');
+
+
+    
 });
+

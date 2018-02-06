@@ -1,18 +1,93 @@
 $(function() {
-//HERO IMAGES
-var counter=0;
-var backgroundimages = ["url(img/IMG_0073.jpg)", "url(img/IMG_0345b.jpg)", "url(img/IMG_0271b.jpg)"];
-function changebgImage () {
-	
-	if(counter===backgroundimages.length-1){counter=0;}
-	else{counter++;}
-  
-	$("#herowrapper").fadeOut(500, function(){
-	  $(this).css("background-image", backgroundimages[counter]).fadeIn(500);
-	}); }
-   
 
-setInterval(changebgImage, 7000);
+//HERO IMAGE 
+
+
+//make sure that images run smoothly 
+function headerBgImageFunction () {
+    var imageLoadTime, imageLoadStartTime, imageLoadEndTime, timeAfterStartTime;
+     var startingImg = new Image();
+    var counter=0;
+    var loadingBar = document.getElementById('loading-bar');
+    imageLoadStartTime = new Date().getTime();
+   
+    
+        //starting hero image
+   
+        startingImg.addEventListener('load', showStartImageandPreloadOtherImages)
+        
+        
+
+        function showStartImageandPreloadOtherImages() {
+         imageLoadEndTime= new Date().getTime();
+         imageLoadTime = imageLoadEndTime - imageLoadStartTime;
+         console.log('imageLoadTime: ' + imageLoadTime + "milliseconds");
+         
+         if(imageLoadTime<=3000){
+            setTimeout( showStartImageandPreloadOtherImages, 1000)
+        }
+        else if (3000<imageLoadTime<=5000){                                
+           $(loadingBar).fadeOut(700, function() { 
+            $("#herowrapper").css("background-image", `url(${backgroundimages[0].src})`);
+            $("#herowrapper").hide().fadeIn(800);
+            toBeLoaded.forEach(function(src){
+               imagePreload(src)});
+            setInterval(changebgImage, 8000);
+        })
+       }
+       else{
+           $(loadingBar).fadeOut(700, function() { 
+            $("#herowrapper").css("background-image", `url(${backgroundimages[0].src})`);
+            $("#herowrapper").hide().fadeIn(800);
+            toBeLoaded.forEach(function(src){
+               imagePreload(src)});
+            setInterval(changebgImage, 12000);
+        })
+       }
+
+   }
+
+   
+   
+   startingImg.src= 'img/IMG_0073.jpg';
+   var backgroundimages = [startingImg];   
+
+
+
+    //PRELOAD images that are to be displayed later on
+    function imagePreload(src){
+        var img= new Image();
+        img.src = src;
+        backgroundimages.push(img);
+    }
+
+   if (window.innerWidth<=769) {toBeLoaded = ["img/IMG_0345b.jpg", "img/IMG_0316.jpg"];}
+   else {toBeLoaded = ["img/IMG_0345b.jpg", "img/IMG_0271b.jpg"];}
+ 
+                    //change background image functionality
+    function changebgImage () {
+            
+
+        if(counter===backgroundimages.length-1){counter=0;}
+        else{counter++;}
+  
+        $("#herowrapper").fadeOut(750, function(){
+             $(this).css("background-image", `url(${backgroundimages[counter].src})`).fadeIn(750);
+        }); 
+
+    }
+
+
+   
+};
+
+headerBgImageFunction();
+
+
+
+
+
+    
 
 
 //MODAL POPUP MAIN PAGE
@@ -22,16 +97,16 @@ setInterval(changebgImage, 7000);
 var gridImages = document.getElementsByClassName("grid-image");
 for(i=0; i<gridImages.length; i++){
 gridImages[i].addEventListener("click", function () {
-	$(".modal-content").attr("id", this.id);
-	$(".modal-popup").removeClass("closed");
-	$(".modal-popup").addClass("active");
+    $(".modal-content").attr("id", this.id);
+    $(".modal-popup").removeClass("closed");
+    $(".modal-popup").addClass("active");
 }
 );}
 
 var closeButton=document.getElementById("close-button");
 closeButton.addEventListener("click", function(){
-	$(".modal-popup").removeClass("active");
-	$(".modal-popup").addClass("closed");
+    $(".modal-popup").removeClass("active");
+    $(".modal-popup").addClass("closed");
 }
 );
 
@@ -42,30 +117,32 @@ var leftArrow=document.getElementById("left-arrow");
 var rightArrow=document.getElementById("right-arrow");
 leftArrow.addEventListener("click", function(){
 
-	for (a=0; a<slideshow.length; a++){
-	if($(".modal-content").attr("id")==slideshow[a]){
-		if($(".modal-content").attr("id")==slideshow[0])
-			{$(".modal-content").attr("id", slideshow[slideshow.length - 1]);}
-		$(".modal-content").attr("id", slideshow[a - 1]);
-		 }
-	
-	}
+    for (a=0; a<slideshow.length; a++){
+    if($(".modal-content").attr("id")==slideshow[a]){
+        if($(".modal-content").attr("id")==slideshow[0])
+            {$(".modal-content").attr("id", slideshow[slideshow.length - 1]);}
+        $(".modal-content").attr("id", slideshow[a - 1]);
+         }
+    
+    }
 });
 
 rightArrow.addEventListener("click", function(){
 
-	for (a=slideshow.length; a>=0; a--){
-	if($(".modal-content").attr("id")==slideshow[a]){
+    for (a=slideshow.length; a>=0; a--){
+    if($(".modal-content").attr("id")==slideshow[a]){
 
-		if($(".modal-content").attr("id")==slideshow[slideshow.length - 1])
-			{$(".modal-content").attr("id", slideshow[0]);}
-		$(".modal-content").attr("id", slideshow[a + 1]);
-		 }
-	
-	}
+        if($(".modal-content").attr("id")==slideshow[slideshow.length - 1])
+            {$(".modal-content").attr("id", slideshow[0]);}
+        $(".modal-content").attr("id", slideshow[a + 1]);
+         }
+    
+    }
 
-
-});
 
 });
 
+});
+//FOOTER COPYRIGHT
+ var date = new Date().getFullYear();
+ $('<li>').text(`© ${date} Piwka. All rights reserved.`).appendTo('footer ul');
