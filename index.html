@@ -3,13 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="Rika Hemmi（逸見吏佳）の手作りの羊毛フェルト服。北海道の羊毛は一本一本の繊維がからんで、布のようになる。
-    予定の大きさまで、縮めて出来上がり">
+    <meta name="description" content="Rika Hemmi（逸見吏佳）の手作りの羊毛フェルト服。北海道の羊毛は一本一本の繊維がからんで、布のようになる。">
     <meta name="Rika Hemmi" content="羊毛フェルト">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="stylesheet" href="css/main.css">
 
 
 
@@ -74,6 +72,45 @@
             opacity:1;
         }
     }
+
+
+/*ESSENTIAL CSS*/
+html body {width:100%; background-color: rgb(255, 248, 245); height:100%; min-height: 100%; margin: 0;font-family: Helvetica;}
+main{width:100%; margin:auto; height:100%;}#
+ul{padding:0; list-style:none; text-align: left;}
+header{overflow:auto; margin:auto;}
+#header-bar{width:100%;
+        height:60px; margin-top:5px;}
+#logo{height:60px; margin-left:10vw; margin-top:0;}
+#herowrapper{ background-repeat: no-repeat; 
+    margin:auto; 
+    height:85.5vh;
+    background-position:center top;
+    border-radius:2px; 
+    background-size:cover;}
+img#hero{width:100%; margin:auto; display:none;}
+
+/*NAV ELEMENT*/
+nav{float:right; margin-right:5vw; padding:0px; }
+nav li{ font-size:16px; display:inline-block; text-align:right; padding-right:2vw}
+nav ul {list-style:none; padding:0;margin:2vh; display:flex; flex-flow:row wrap;justify-content:flex-end; margin-top: 20px; }
+header h1{float:left; margin:0;display:inline;  }
+a{text-decoration:none; color:black;}
+a:hover{cursor:pointer; color:LightBlue; }
+
+.loading-bar{
+width:34vw;
+margin:auto;
+top: 45vh;
+right:33vw;
+position:absolute;
+z-index:999;
+}
+
+.main-wrapper {border-radius: 2px;  margin:auto;margin-bottom:1vh; padding-bottom:1px;}
+.border{width:75%; /*border-bottom: 1px solid;*/ margin:auto;}
+.border img {margin:auto; width:100%; position:relative; top:7px;}
+.widthsetter{ width: 85%; max-width:1052px;margin:auto; }
 </style>
 <script>
 
@@ -102,7 +139,6 @@ var loadingInterval = setInterval(function(){replaceloadingBar('loading-bar1')},
                <ul>
                  <li><a href="#fuku">服・デザイン</a></li>
                  <li><a href="#gridwrapper">羊と生活</a></li>
-
                  <li><a href="#contact">コンタクト</a></li>
 
              </ul>
@@ -127,6 +163,7 @@ var loadingInterval = setInterval(function(){replaceloadingBar('loading-bar1')},
     <section class="main-wrapper widthsetter">
 
         <div class= "border">
+            <img data-src="img/wool.png" alt="rikahemmi"/>
         </div> 
 
         <div id="rika-text">
@@ -136,8 +173,10 @@ var loadingInterval = setInterval(function(){replaceloadingBar('loading-bar1')},
         </div>
 
 
-        <div class= "border">
-        </div> 
+       <!--  <div class= "border">
+             <img data-src="img/wool.png"/>
+        </div>  -->
+    <link rel="stylesheet" href="css/main.css">
 
         <section id="fuku" class="grid-container">
             <div id= "felt-garment-1" class="grid-image-container">
@@ -192,18 +231,24 @@ var loadingInterval = setInterval(function(){replaceloadingBar('loading-bar1')},
              <div id="shoes-1-image" data-background= "img/IMG_0350.jpg" class="grid-image lazy-load">
              </div>
          </div>
-
      </section>
-
+ <div class= "border">
+             <img data-src="img/wool.png" alt="rikahenmi"/>
+        </div> 
  </section>
  <div class="mid-background">
-    <img id="hokkaido_landscape" data-src="img/hokkaido_landscape.jpg" alt="自然">
+    <img id="hokkaido_landscape" data-src="img/hokkaido_landscapec.jpg" alt="rikahemmi 自然">
 </div>
 
 
 
 <div id="gridwrapper">      
     <h2>羊と生活</h2>
+    <div class="widthsetter">
+        <div class= "border">
+         <img data-src="img/wool.png"/>
+        </div>
+    </div>
     <section id="second-half-grid"> 
 
         <div id="seikatsu" class="hideatwidth510">
@@ -233,7 +278,10 @@ var loadingInterval = setInterval(function(){replaceloadingBar('loading-bar1')},
 
 <div id="slideranchor">
 </div>
-<div class= "border hiddenapp" id="app-border">
+<div class= "hiddenapp margintop" id="app-border">
+     <div class= "border">
+             <img data-src="img/wool.png"/>
+        </div> 
 </div>
 <div id="app" class="hiddenapp">
 
@@ -242,9 +290,8 @@ var loadingInterval = setInterval(function(){replaceloadingBar('loading-bar1')},
 
 </div>
 
-<div class="margin-contact">
-    <div class= "border">
-    </div>
+<div class="margintop">
+    
     <div class="contact-wrapper">
         <div class="flex-wrapper1">
 
@@ -258,7 +305,7 @@ var loadingInterval = setInterval(function(){replaceloadingBar('loading-bar1')},
                <div>
                  <h3>興味がある方・服を購入したい方</h3>
                  <p>こちらに連絡してください： </p>
-                 <p><a href="mailto:bearlambyou@gmail.com">bearlambyou [@] gmail.com</a>　</p>
+                 <p><a href="mailto:bearlambyou@gmail.com"><em>bearlambyou@gmail.com</em></a>　</p>
              </div>
          </div>
      </div>
@@ -285,35 +332,43 @@ var loadingInterval = setInterval(function(){replaceloadingBar('loading-bar1')},
 <div class="modal-popup closed">
     <span id="close-button" class="modal-button">&times;</span>
     <div id="arrow-grid">
-        <span class="modal-button"><img id="left-arrow-modal" src="img/arrow-left.png" alt="Left Arrow"></span>
+        <span class="modal-button"><img id="left-arrow-modal" data-src="img/arrow-left.png" alt="Left Arrow"></span>
         <div id="modal-content" class="modal-content">
         </div>
 
-        <span  class="modal-button"><img id="right-arrow-modal" class= "rightarrow" src="img/arrow-left.png" alt="Right Arrow"></span>
+        <span  class="modal-button"><img id="right-arrow-modal" class= "rightarrow" data-src="img/arrow-left.png" alt="Right Arrow"></span>
     </div>
 
 </div> 
 
+ <div class="widthsetter" id="border-footer">
+            <div class= "border" >
+               <img data-src="img/wool.png" alt="へんみりか"/>
+           </div>
+       </div>
 <a id="to-top" href='#header-bar'><span><img data-src="img/arrow-left.png" class="uparrow" alt="go to top"></span></a>
 <footer class="lazy-load" data-background="img/footer.png">
-
-
     <div id="footer-div">
-
-        <ul> 
-            <li><span class='bold'>逸見吏佳</span></li>
-            <li> 〒０９８－２２０７
-
-              北海道中川郡美深町字辺渓２８５－５
-
-          粗清草堂（そせいそうどう） </li> 
-          <li> <a href="mailto:bearlambyou@gmail.com"><img data-src="img/envelope.png" alt="ウールと毛"> メール : bearlambyou [@] gmail.com</a></li>
+        <div class="half-width info">
+             <ul> 
+                 <li><img id='rika-logo-footer' data-src="img/rika-hemmi.png" alt="りかへんみ"></li>
+          <li> <a href="mailto:bearlambyou@gmail.com"><img data-src="img/envelope.png" alt="ウールと毛"> <em>bearlambyou@gmail.com</em></a></li>
           <li> <a href="https://www.facebook.com/rikahemmi/"><img data-src="img/fb-icon-small.png" alt="フェースブック"> フェースブック </a> </li>
-
-
-          <li><a href="http://itadakizen.com/restaurant/"><img data-src="img/itadakibw.png" alt="いただき繕">いただき繕 </a> </li>
-          <li><img id='rika-logo-footer' data-src="img/rika-hemmi.png" alt="りかへんみ"></li>
+          <li><a href="http://itadakizen.com/restaurant/"><img data-src="img/itadakibw.png" alt="いただき繕"> いただき繕 </a> </li>
+         
       </ul>
+        </div>
+        <div class="half-width address">
+            <ul>
+            <li><span class='bold'>逸見吏佳 </span>(へんみ・りか)</li>
+            <li> 〒０９８－２２０７<br>
+              北海道中川郡<br>
+              美深町<br>
+              字辺渓２８５－５<br>
+          粗清草堂（そせいそうどう） </li> 
+      </ul>
+        </div>
+       
 
   </div>
 

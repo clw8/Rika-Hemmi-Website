@@ -87,34 +87,10 @@ textarea {
 
 
 
-html body {width:100%; background-color: rgb(255, 248, 245); height:100%; min-height: 100%; margin: 0;font-family: Helvetica;}
-main{width:100%; margin:auto; height:100%;}
-ul{padding:0; list-style:none; text-align: left;}
 img{border-radius: 2px;}
 
-a{text-decoration:none; color:black;}
-a:hover{cursor:pointer; color:LightBlue; }
 
-header{overflow:auto; margin:auto;}
-#header-bar{width:100%;
-		height:60px; margin-top:5px;
-	}
-
-#logo{height:60px; margin-left:10vw; margin-top:0;}
-#herowrapper{ background-repeat: no-repeat; 
-	margin:auto; 
-	height:85.5vh;
-	background-position:center top;
-	border-radius:2px; 
-	background-size:cover;
-		}
-img#hero{width:100%; margin:auto; display:none;}
-
-
-.main-wrapper {border-radius: 2px;  margin:auto;margin-bottom:1vh; padding-bottom:1px;}
-.border{height: 2.6vh;width:75%; border-bottom: 1px solid; margin:auto;}
-.widthsetter{ width: 85%; max-width:1052px;margin:auto; }
-
+/*FIRST PARAGRAPH*/
 #rika-text {padding-top:1.5vh; margin-top:0.5%; }
 #rika-text p {margin:auto;line-height:35px;  width: 97%; margin-left:3px;}
 
@@ -165,14 +141,14 @@ grid-template-areas: "garm1 garm1 garm2 coat1 coat1"
 
 .image-position-fix{background-position-x: 65%;}
 
-/*MAIN*/
+/*MID PAGE*/
 .mid-background {height: auto; margin-top: 3vh; }
 #hokkaido_landscape{ width:100%; height:auto;}
 #gridwrapper {margin-top: 50px;}
 
-.bold{font-weight:800; line-height:30px;}
-h2{margin-left: 10vw; font-size: 22px; margin-top: 4vh;}
-.flex-wrapper2{border-radius: 12px; grid-area: articles;   display:flex; flex-direction: row wrap; justify-content: space-around; align-items:center; padding: 8px;background:white;}
+.bold{font-weight:600; line-height:34px; font-family: Verdana;}
+h2{/*margin-left: 10vw; */font-size: 22px; margin-top: 4vh; text-align:center;}
+.flex-wrapper2{border-radius: 12px; grid-area: articles;   display:flex; flex-direction: row wrap; justify-content: space-around; align-items:center; padding: 8px;/*background:white;*/}
 .itemwrapper { display:flex; flex-flow: column; padding-left:8px; }
 .itemwrapper a{margin:5px;}
 .itemwrapper p {margin: 12px 0px 12px 0px; width:auto; display: inline-block;}
@@ -204,16 +180,8 @@ h2{margin-left: 10vw; font-size: 22px; margin-top: 4vh;}
 #article-template{display:none;}
 
 
-/*NAV ELEMENT*/
-nav{float:right; margin-right:5vw; padding:0px; }
-nav li{ font-size:16px; display:inline-block; text-align:right; padding-right:2vw}
-nav ul {list-style:none; padding:0;margin:2vh; display:flex; flex-flow:row wrap;justify-content:flex-end; margin-top: 20px; }
-header h1{float:left; margin:0;display:inline;  }
-
-
-
 /*CONTACT ELEMENT*/
-.margin-contact{margin-top: 2%;}
+.margintop{margin-top: 60px;}
 .flex-wrapper1{border-radius: 10px; margin:auto;  margin-top: 3%; margin-bottom: 2%; display:flex; flex-flow: row wrap; justify-content:center; /*background-color: rgba(109,104,117,0.3);*/}
 .flex-wrapper1 > div {display:flex; flex-flow: row wrap; justify-content: center;}
 #contact-image{height: 20%; max-width: 300px; border-radius:50%; margin-right: 15px; padding:auto; min-width:180px;}
@@ -226,8 +194,7 @@ header h1{float:left; margin:0;display:inline;  }
 /*FOOTER*/
 
 footer{overflow:hidden;background-position: right top; background-size: cover; padding-top: 5vw; margin-top: 3vh; width:100%; height: auto; min-height: 8vh; color:white; font-size:16px;}
-footer ul li {display:block; margin:auto;align-text:center;}
-footer ul {margin:4px 0px 4px 0px; text-align:center;}
+footer ul li {display:block; margin:auto; line-height: 20px;}
 h3{display:block;}
 #to-top{ padding-left: 1%; position:relative; top:12vh; left: 3vw;}
 .uparrow{  -webkit-transform: rotate(90deg);
@@ -235,19 +202,16 @@ h3{display:block;}
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);}
-#rika-logo-footer{max-height: 35px;}
-#footer-div {background-color: rgba(138,133,143,1); margin-left:auto;margin-right:auto; margin-top: 2vh; padding-top: 5px; margin-bottom:5px; }
-
-/*SHEEP LIFE PAGE*/
-#article { cursor: pointer; width:85%;  margin:auto; display:none;}
-#article-zoom{cursor: pointer;}
-#kakudai {text-align:right;}
-.flex-image {
-  display:block; margin:1vw;  border-radius:1.5px; width:90%; height:90%; }
-
-
-#header-border{height: 2.6vh;width:68%; border-bottom: 1.5px solid; margin:auto; margin-top:2vh;}
-
+#rika-logo-footer{max-height: 28px; margin-left:26px;}
+#footer-div {background-color: rgba(138,133,143,1); margin-left:auto;margin-right:auto; margin-top: 2vh; padding-top: 5px; margin-bottom:5px; display:grid; grid-template-columns:25% 25% 25% 25%; grid-template-areas: ". info address .";}
+.half-width{margin-top:10px; display:flex; align-items: center;}
+.half-width p{text-align:center;}
+.info{grid-area: info; margin:auto; }
+.info li{line-height:32px;}
+.address{grid-area: address; border-left: 1px solid; }
+footer ul {margin:4px 0px 4px 0px; }
+#border-footer{position:relative; top:65px;}
+footer p{text-align:center; font-size:14px;}
 
 
 /*MODAL POPUP*/
@@ -332,60 +296,55 @@ left:78vw;
 }
 
 
-/*LOADING PROGRESS SVG*/
 
-.loading-bar{
-width:34vw;
-margin:auto;
-top: 45vh;
-right:33vw;
-position:absolute;
-z-index:999;
-
-
-}
 
 
 /*MEDIA QUERIES*/
 
 @media (max-width:769px) {
 header{width:98%;}
-#logo {height:45px; margin-left:0vh;}
-.main-wrapper  {width:99%;}
-.widthsetter {width:98%;}
-.half-width{width:100%;}
+#logo {height:45px !important; margin-left:0vh !important;}
+.main-wrapper  {width:99% !important;}
+.widthsetter {width:98% !important;}
 nav ul li a{font-size:14px;}
-nav{margin-right:0;}
-.flex-wrapper1{ padding-left:0;}
-.image-position-fix{background-position-x: 10%;}
-footer{width:100%; font-size:14px; }
-#rika-text p {line-height:28px; width:100%; }
-#rika-text {width:100%;}
-.grid-container {  justify-items:center; grid-auto-rows: 10vh;}
-#contact{line-height: 20px; text-align:center; justify-content:center;}
+nav{margin-right:0 !important;}
+.flex-wrapper1{ padding-left:0 !important;}
+.image-position-fix{background-position-x: 10% !important;}
+footer{width:100%; font-size:14px !important; padding-top:10vh;}
+#rika-text p {line-height:28px !important; width:100% !important; }
+#rika-text {width:100% !important;}
+.grid-container {  justify-items:center !important; grid-auto-rows: 10vh !important; }
+#contact{line-height: 20px !important; text-align:center !important; justify-content:center !important;}
 
-#arrow-grid {grid-template-columns: 1fr 0px 1fr; top: 1vh;}
-#contact-image{width:40%; }
-.flex-image{width:50%;}
-.flex-image:hover {cursor:auto;transform:none; }
-.imagewrapper img{width:30vw; min-width:200px; }
-#seikatsu {margin-left:5vw;}
-#seikatsu img { margin-left: 5px; }
-.itemwrapper p {margin: 6px 0px 6px 0px;}
-.modal-button{  font-size: 35px;}
+#arrow-grid {grid-template-columns: 1fr 0px 1fr; top: 1vh !important;}
+#contact-image{width:40% !important; }
+
+.imagewrapper img{width:30vw !important; min-width:200px !important; }
+#seikatsu {margin-left:5vw !important;}
+#seikatsu img { margin-left: 5px !important; }
+.itemwrapper p {margin: 6px 0px 6px 0px !important;}
+.modal-button{  font-size: 35px !important;}
+#footer-div{grid-template-columns:0% 50% 50% 0% !important;}
+#border-footer{top:30px;}
 }
 
 @media (max-width: 510px) {
-.hideatwidth510{display:none;}
-.modal-button{  font-size: 25px;}
-.itemwrapper {margin-left:10px;}
-nav ul {flex-flow:column; margin:0;}
-
+.hideatwidth510{display:none !important;}
+.modal-button{  font-size: 25px !important;}
+.itemwrapper {margin-left:10px !important;}
+nav ul {flex-flow:column !important; margin:0 !important;}
+#footer-div{grid-template-rows:50% 50% !important;
+grid-template-areas: ". info info ." ". address address ." !important;}
+.info{margin:0; justify-content:end; padding-right:5px;}
+.loading-bar{width:45vw !important; right:27.5vw !important;}
+footer{background-position:0% 0% !important;}
+.address{border-left:0px; width:90%; margin:auto;
+border-top:1px solid;}
+.address ul{padding:0;}
 }
 
 @media (max-width:400px){
 #article {width:100%;}
-.flex-image {width:100%;}
 #header-bar{height: 72px;}
 footer{padding-top: 30px;}
 #share-button{margin:0; top: 160px;}
@@ -417,6 +376,7 @@ footer{padding-top: 30px;}
    #seikatsu img {width:80%;}
 #left-arrow-modal{ top:40vw; left:30vw;}
 #right-arrow-modal{ top:40vw; right:30vw;}
+#footer-div{grid-template-columns:15% 35% 35% 15%;}
  }
 
  @media (max-width:690px){

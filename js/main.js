@@ -348,7 +348,7 @@ callback();
 
 //FOOTER COPYRIGHT
  var date = new Date().getFullYear();
- $('<li>').text(`© ${date} Rika Hemmi. All rights reserved.`).appendTo('footer ul');
+ $('<p>').text(`© ${date} Rika Hemmi. All rights reserved.`).appendTo('footer');
 
 
 });
