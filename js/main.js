@@ -263,7 +263,6 @@ var showArticle = function(e){
     else{
         $articleholder.fadeIn(1000);
         var loadingInterval2 = setInterval(function(){replaceloadingBar('loading-bar2')}, 4000);
-
         loadImage = function(url) {
             return new Promise((resolve, reject) => {
                 var xhr = new XMLHttpRequest();
@@ -286,6 +285,9 @@ var showArticle = function(e){
             clearInterval(loadingInterval2);
             $articleholder.append(img);
              $articleholder.addClass('active');
+             if(window.innerWidth<800){
+               $('#articleholder img').css('width', '800px');
+             }
               $('#articleholder img').hide();
             $('#loading-bar2').fadeOut(600, function(){
             $('#articleholder > img').fadeIn(1000)
@@ -346,7 +348,7 @@ callback();
 
 //FOOTER COPYRIGHT
  var date = new Date().getFullYear();
- $('<li>').text(`© ${date} Piwka. All rights reserved.`).appendTo('footer ul');
+ $('<li>').text(`© ${date} Rika Hemmi. All rights reserved.`).appendTo('footer ul');
 
 
 });

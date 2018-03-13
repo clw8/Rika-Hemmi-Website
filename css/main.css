@@ -172,7 +172,7 @@ grid-template-areas: "garm1 garm1 garm2 coat1 coat1"
 
 .bold{font-weight:800; line-height:30px;}
 h2{margin-left: 10vw; font-size: 22px; margin-top: 4vh;}
-.flex-wrapper2{border-radius: 4px; grid-area: articles;   display:flex; flex-direction: row wrap; justify-content: space-around; align-items:center; padding: 8px;background:white;}
+.flex-wrapper2{border-radius: 12px; grid-area: articles;   display:flex; flex-direction: row wrap; justify-content: space-around; align-items:center; padding: 8px;background:white;}
 .itemwrapper { display:flex; flex-flow: column; padding-left:8px; }
 .itemwrapper a{margin:5px;}
 .itemwrapper p {margin: 12px 0px 12px 0px; width:auto; display: inline-block;}
@@ -216,7 +216,7 @@ header h1{float:left; margin:0;display:inline;  }
 .margin-contact{margin-top: 2%;}
 .flex-wrapper1{border-radius: 10px; margin:auto;  margin-top: 3%; margin-bottom: 2%; display:flex; flex-flow: row wrap; justify-content:center; /*background-color: rgba(109,104,117,0.3);*/}
 .flex-wrapper1 > div {display:flex; flex-flow: row wrap; justify-content: center;}
-#contact-image{border-radius:50%; margin-right: 15px; padding:auto; min-width:180px;}
+#contact-image{height: 20%; max-width: 300px; border-radius:50%; margin-right: 15px; padding:auto; min-width:180px;}
 #contact{width: 340px; margin-bottom:4%; vertical-align: middle;display:flex; flex-flow: column;align-items: start; justify-content: center;}
 #contact > div { display:flex; flex-flow: column; align-items:center; justify-content: flex-end; margin-left: 12px;}
 #contact p,h3 { text-align:center; width:auto; display:block; max-width: 340px;}
@@ -260,7 +260,7 @@ h3{display:block;}
      width: 100%; 
     height: 100%;
     overflow: auto;
-    background-color: rgba(255,255,255); 
+    background-color: rgba(255,255,255,0.8); 
     display:none;
 }
 #articleholder > img { width:100%; margin:auto;}
@@ -322,7 +322,6 @@ left:78vw;
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);}
 
-#left-arrow, #right-arrow { }
 
 
 .modal-button:hover,
@@ -341,91 +340,10 @@ margin:auto;
 top: 45vh;
 right:33vw;
 position:absolute;
-z-index:99;
+z-index:999;
 
 
 }
-
-
-.pen1 {
-  fill: none;
-  stroke:url(#linearGradient5123);
-  stroke-linecap: round;
-  clip-path: url(#loadingBarpt1);
-stroke-width:2;
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation-duration: 2s;
-  animation-name: draw;
-  animation-iteration-count: 1;
-  animation-direction: forward;
-  animation-timing-function: cubic-bezier(.49,.02,.51,1);
-animation-fill-mode: forwards;
-}
-
-.pen2{ fill: none;
-  stroke:url(#linearGradient5123);
-  stroke-linecap: round;
-  clip-path: url(#loadingBarpt2);
-	stroke-width:2;
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation-duration: 2s;
-animation-delay: 1.52s;
-  animation-name: draw;
-  animation-iteration-count: 1;
-  animation-direction: forward;
-  animation-timing-function: cubic-bezier(.8,.54,.77,.75);
-animation-fill-mode: forwards;
-}
-
-.pen3 {
-  fill: none;
-  stroke:url(#linearGradient5124);
-  stroke-linecap: round;
-  clip-path: url(#loadingBarpt3);
-stroke-width:2;
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation-duration: 2s;
-  animation-name: draw;
-  animation-iteration-count: 1;
-  animation-direction: forward;
-  animation-timing-function: cubic-bezier(.49,.02,.51,1);
-animation-fill-mode: forwards;
-}
-
-.pen4{ fill: none;
-  stroke:url(#linearGradient5124);
-  stroke-linecap: round;
-  clip-path: url(#loadingBarpt4);
-  stroke-width:2;
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation-duration: 2s;
-animation-delay: 1.52s;
-  animation-name: draw;
-  animation-iteration-count: 1;
-  animation-direction: forward;
-  animation-timing-function: cubic-bezier(.8,.54,.77,.75);
-animation-fill-mode: forwards;
-}
-
-
-@keyframes draw {
-  0% {
-    stroke-dashoffset: 150;
-	stroke-opacity:1;
-	
-  }
-
-
- 100% {
-    stroke-dashoffset: 0;
-stroke-opacity:1;
-  }
-}
-
 
 
 /*MEDIA QUERIES*/
@@ -461,10 +379,11 @@ footer{width:100%; font-size:14px; }
 .hideatwidth510{display:none;}
 .modal-button{  font-size: 25px;}
 .itemwrapper {margin-left:10px;}
+nav ul {flex-flow:column; margin:0;}
+
 }
 
 @media (max-width:400px){
-nav ul {flex-flow:column; margin:0;}
 #article {width:100%;}
 .flex-image {width:100%;}
 #header-bar{height: 72px;}
@@ -506,6 +425,7 @@ footer{padding-top: 30px;}
  .itemwrapper > a > img {width:auto;}
   .flex-wrapper2 {flex-flow: row wrap; justify-content: space-around;}
   #contact{width:100%; align-items: center;}
+  
 }
 
 
