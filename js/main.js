@@ -55,7 +55,7 @@ function heroBgImageFunction () {
             clearInterval(loadingInterval);
             var loadingBar = document.getElementById('loading-bar1');
             $(loadingBar).fadeOut(700, function() { 
-            		herowrapper.css("background-image", `url(${backgroundimages[0].src})`);
+            		herowrapper.css("background-image", "url(" + backgroundimages[0].src + ")");
             		herowrapper.hide().fadeIn(800);
             		callback();
               		});
@@ -77,7 +77,7 @@ function heroBgImageFunction () {
         else{counter++;}
   
         herowrapper.fadeOut(750, function(){
-             $(this).css("background-image", `url(${backgroundimages[counter].src})`).fadeIn(750);
+             $(this).css("background-image", "url(" + backgroundimages[counter].src + ")").fadeIn(750);
 
         }); 
 
@@ -194,11 +194,11 @@ rightArrow.addEventListener("click", function(e){
 
 //SHOW SLIDER
  loadFromServer = function(url) {
-      return new Promise((resolve, reject) => {
+      return new Promise(function(resolve, reject) {
           var xhr = new XMLHttpRequest();
           xhr.open("GET", url);
-          xhr.onload = () => resolve(xhr.response);
-          xhr.onerror = () => reject(xhr.statusText);
+          xhr.onload = function() {resolve(xhr.response)};
+          xhr.onerror = function() {reject(xhr.statusText)};
           xhr.send();}
             )};
 
@@ -234,7 +234,7 @@ var showSlider = function (e) {
           $('#app-border').hide().fadeIn(2500);
           $app.addClass('slidershowing');
       })})
-      .catch((error) => console.log(error))
+      .catch(function(error){console.log(error)})
 
       
     }
@@ -242,7 +242,7 @@ var showSlider = function (e) {
 
 }
 
-Array.prototype.forEach.call(sliderLinks, (link) => {link.addEventListener('click', showSlider)});
+Array.prototype.forEach.call(sliderLinks, function(link){link.addEventListener('click', showSlider)});
 
 //LOAD ARTICLE
 var articleLinks = document.getElementsByClassName('article-link');
@@ -264,12 +264,12 @@ var showArticle = function(e){
         $articleholder.fadeIn(1000);
         var loadingInterval2 = setInterval(function(){replaceloadingBar('loading-bar2')}, 4000);
         loadImage = function(url) {
-            return new Promise((resolve, reject) => {
+            return new Promise(function(resolve, reject) {
                 var xhr = new XMLHttpRequest();
                 xhr.responseType = "arraybuffer";
                 xhr.open("GET", url);
-                xhr.onload = () => resolve(xhr.response);
-                xhr.onerror = () => reject(xhr.statusText);
+                xhr.onload = function() {resolve(xhr.response)};
+                xhr.onerror = function() {reject(xhr.statusText)};
                  xhr.send(null);}
                 )};
 
@@ -292,7 +292,7 @@ var showArticle = function(e){
             $('#loading-bar2').fadeOut(600, function(){
             $('#articleholder > img').fadeIn(1000)
             })
-        }).catch((error) => console.log(error));
+        }).catch(function(error) {console.log(error)});
     }
 
 }
@@ -301,7 +301,7 @@ var showArticle = function(e){
 
 
 
-Array.prototype.forEach.call(articleLinks, (link) => {link.addEventListener('click', showArticle)});
+Array.prototype.forEach.call(articleLinks, function(link) {link.addEventListener('click', showArticle)});
 var closeArticleButton = document.getElementById('close-article');
 closeArticleButton.addEventListener('click', function() {
   $articleholder.fadeOut(800);
@@ -323,19 +323,26 @@ var lazyloading= function(callback){
     };
   });
 
-  var lazybackgroundImages= document.getElementsByClassName('lazy-load');
+
+
+ var lazybackgroundImages= document.getElementsByClassName('lazy-load');
+ var lazybackgroundFallback= document.getElementsByClassName('lazy-load-fallback');
+
   var bgimagescount= 0;
   Array.prototype.forEach.call(lazybackgroundImages, function(lazydiv){
 
    var src = $(lazydiv).attr('data-background');
    img = new Image(); 
    img.src = src;
+   console.log("hi");
    img.onload= function() {
      $(lazydiv).css('background-image', 'url("'+src+'")');
-       img.remove();
+       $(img).remove();
        $(lazydiv).css('display', 'none');
             $(lazydiv).fadeIn(2000);
-    };
+            bgimagescount++;
+
+  };
 
   });
 callback();
@@ -348,7 +355,7 @@ callback();
 
 //FOOTER COPYRIGHT
  var date = new Date().getFullYear();
- $('<p>').text(`© ${date} Rika Hemmi. All rights reserved.`).appendTo('footer');
+ $('<p>').text("© " + date + " Rika Hemmi. All rights reserved.").appendTo('footer');
 
 
 });

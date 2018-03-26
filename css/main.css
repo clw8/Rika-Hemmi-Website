@@ -107,7 +107,11 @@ img{
 .grid-container {
 	margin-top:3%; 
 	margin-bottom:2%; 
-	display:flex; 
+
+	display:-ms-grid; 
+	-ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+	-ms-grid-rows: 12.5vh 12.5vh 12.5vh 12.5vh 12.5vh 12.5vh;
+	
 	display:grid;  
 	grid-template-columns: repeat(5, 1fr); 
 	justify-items:center;
@@ -142,19 +146,19 @@ img{
 	opacity: 0.7;
 }
 
-#felt-coat-1{display:-ms-grid; display:grid; grid-area:coat1; }
-#felt-coat-2{display:-ms-grid; display:grid;  grid-area: coat2;}
-#felt-coat-3{display:-ms-grid; display:grid;  grid-area: coat3;}
-#felt-bag-1{display:-ms-grid; display:grid;  grid-area: bag1;  }
-#felt-bag-2{display:-ms-grid; display:grid;  grid-area: bag2; }
-#felt-bag-3{display:-ms-grid; display:grid;  grid-area: bag3; }
-#felt-bag-4{display:-ms-grid; display:grid;  grid-area: bag4;}
-#felt-shoes-1{display:-ms-grid; display:grid;  grid-area: shoes1;}
-#felt-shoes-2{display:-ms-grid; display:grid;  grid-area: shoes2;}
-#felt-garment-1{display:-ms-grid; display:grid;  grid-area: garm1;}
-#felt-garment-2{display:-ms-grid; display:grid;  grid-area: garm2;}
-#felt-fabric-1{display:-ms-grid; display:grid;  grid-area: fabric1;}
-#felt-fabric-2{display:-ms-grid; display:grid;  grid-area: fabric2;}
+#felt-coat-1{width:100%; display: grid; -ms-grid-column:4; -ms-grid-column-span:2; -ms-grid-row:1; -ms-grid-row-span:3;  grid-area:coat1; }
+#felt-coat-2{width:100%;  display: grid; -ms-grid-column:3; -ms-grid-column-span:1; -ms-grid-row:2; -ms-grid-row-span:2;  grid-area: coat2;}
+#felt-coat-3{width:100%;   display: grid; -ms-grid-column:1; -ms-grid-column-span:1; -ms-grid-row:4; -ms-grid-row-span:2;  grid-area: coat3;}
+#felt-bag-1{width:100%;   display: grid; -ms-grid-column:1; -ms-grid-column-span:1; -ms-grid-row:6; -ms-grid-row-span:1; grid-area: bag1;  }
+#felt-bag-2{width:100%;   display: grid; -ms-grid-column:2; -ms-grid-column-span:2; -ms-grid-row:4; -ms-grid-row-span:2; grid-area: bag2; }
+#felt-bag-3{width:100%;    display: grid; -ms-grid-column:2; -ms-grid-column-span:1; -ms-grid-row:6; -ms-grid-row-span:1; grid-area: bag3; }
+#felt-bag-4{width:100%;   display: grid; -ms-grid-column:3; -ms-grid-column-span:1; -ms-grid-row:6; -ms-grid-row-span:1;  grid-area: bag4;}
+#felt-shoes-1{width:100%;  display: grid; -ms-grid-column:4; -ms-grid-column-span:2; -ms-grid-row:5; -ms-grid-row-span:2;   grid-area: shoes1;}
+#felt-shoes-2{width:100%;    display: grid; -ms-grid-column:5; -ms-grid-column-span:1; -ms-grid-row:4; -ms-grid-row-span:1;  grid-area: shoes2;}
+#felt-garment-1{width:100%;  display: grid; -ms-grid-column:1; -ms-grid-column-span:2; -ms-grid-row:1; -ms-grid-row-span:2;   grid-area: garm1; }
+#felt-garment-2{width:100%;  display: grid; -ms-grid-column:3; -ms-grid-column-span:1; -ms-grid-row:1; -ms-grid-row-span:1;  grid-area: garm2;}
+#felt-fabric-1{width:100%;   display: grid; -ms-grid-column:4; -ms-grid-column-span:1; -ms-grid-row:4; -ms-grid-row-span:1;  grid-area: fabric1;}
+#felt-fabric-2{ width:100%;   display: grid; -ms-grid-column:1; -ms-grid-column-span:2; -ms-grid-row:3; -ms-grid-row-span:1;  grid-area: fabric2;}
 
 #coat-2-image{background-position-y: 10%;}
 #bag-1-image{background-position-y: 90%;}
@@ -192,8 +196,45 @@ h2{
 	margin-top: 4vh; 
 	text-align:center;
 }
+
+#second-half-grid{
+	margin: 2% 0px 0px 0px; 
+	display:-ms-grid; 
+	display:grid; 
+	-ms-grid-columns: 480px auto 1fr; 
+	grid-template-columns:480px auto 1fr; 
+	grid-template-areas: "seikatsu articles background"; 
+}
+#seikatsu{ 
+	margin:0; 
+	padding-right: 2vw; 
+	display:inline; 
+	-ms-grid-column:1;
+	-ms-grid-column-span:1;
+	grid-area: seikatsu;  
+	justify-self: center; 
+	align-self: start; 
+	margin-left:10px;
+}
+#seikatsu img{
+	margin-left:10%; 
+	width:88%;
+	overflow:hidden; 
+	border-radius: 12px; 
+	min-width:350px; 
+}
+#second-grid-right{
+	-ms-grid-column:3;
+	-ms-grid-column-span:1;
+	grid-area: background; 
+	background-repeat: no-repeat; 
+	background-position: center right;
+	background-size:contain;
+}
 .flex-wrapper2{
 border-radius: 12px; 
+-ms-grid-column:2;
+-ms-grid-column-span:1;
 grid-area: articles;   
 display: -webkit-box;    
 display: -moz-box;    
@@ -225,36 +266,6 @@ padding: 8px;
 .imagewrapper{
 	width:auto; 
 	height:auto;
-}
-#second-half-grid{
-	margin: 2% 0px 0px 0px; 
-	display:-ms-grid; 
-	display:grid; 
-	-ms-grid-columns: 480px auto 1fr; 
-	grid-template-columns:480px auto 1fr; 
-	grid-template-areas: "seikatsu articles background"; 
-}
-#seikatsu{ 
-	margin:0; 
-	padding-right: 2vw; 
-	display:inline; 
-	grid-area: seikatsu;  
-	justify-self: center; 
-	align-self: start; 
-	margin-left:10px;
-}
-#seikatsu img{
-	margin-left:10%; 
-	width:88%;
-	overflow:hidden; 
-	border-radius: 12px; 
-	min-width:350px; 
-}
-#second-grid-right{
-	grid-area: background; 
-	background-repeat: no-repeat; 
-	background-position: center right;
-	background-size:contain;
 }
 .imagewrapper > a {
 	position:absolute; 
@@ -320,7 +331,7 @@ padding: 8px;
 
 	/*CONTACT ELEMENT*/
 .margintop{
-	margin-top: 60px;
+	margin-top: 80px;
 }
 .flex-wrapper1{
 border-radius: 10px; 
@@ -465,7 +476,7 @@ footer ul {
 }
 #border-footer{
 	position:relative; 
-	top:65px;
+	top:45px;
 }
 footer p{
 	text-align:center; 
@@ -750,13 +761,12 @@ footer p{
 
 	@media (max-width: 1080px){
 		#second-half-grid{ 
+			-ms-grid-columns:400px 1fr;
+			grid-template-columns:400px 1fr; 
 			grid-template-areas:"seikatsu articles";
 		}
 		#second-grid-right{
 			display:none;
-		}
-		#second-half-grid{  
-			grid-template-columns:400px 1fr; 
 		}
 		#seikatsu{ 
 			margin-left: 5px;
@@ -779,6 +789,7 @@ footer p{
 
 	@media (max-width:690px){
 		#second-half-grid{ 
+			-ms-grid-columns:auto;
 			grid-template-columns:auto; 
 			grid-template-areas: "articles"; 
 			flex-flow: row;
