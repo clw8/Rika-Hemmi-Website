@@ -18,6 +18,7 @@ $('document').ready(function(){
 
     if(startingImg.complete){
       LoadHeroImages();
+      console.log("hio");
     }
     else {startingImg.addEventListener('load', LoadHeroImages);}
 
@@ -53,10 +54,12 @@ $('document').ready(function(){
 
     function showStartImage(callback) {
       clearInterval(loadingInterval);
-      var loadingBar = document.getElementById('loading-bar1');
-      $(loadingBar).fadeOut(700, function() {
+
+      $('#loading-bar1').fadeOut(700, function() {
         herowrapper.css("background-image", "url(" + backgroundimages[0].src + ")");
         herowrapper.hide().fadeIn(800);
+
+        this.classList.add('loading-bar--hidden');
         callback();
       });
     };
