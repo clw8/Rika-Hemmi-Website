@@ -1,6 +1,6 @@
 //SLICK
  $('.slides').slick({
-   lazyLoad: 'ondemand',
+  //  lazyLoad: 'ondemand',
   infinite: true,
    slidesToShow: 1.67,
    touchMove: true,

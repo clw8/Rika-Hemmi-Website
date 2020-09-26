@@ -2,7 +2,63 @@
 
 $('document').ready(function(){
 
-
+  $('.slides').slick({
+    //  lazyLoad: 'ondemand',
+    infinite: true,
+     slidesToShow: 1.67,
+     touchMove: true,
+     arrows: true,
+     appendArrows: $('.pagination'),
+     centerMode: true,
+    centerPadding: '180px',
+    prevArrow:
+    '<img id="left-arrow-slide" src="img/arrow-left.png">',
+    nextArrow:
+   '<img id="right-arrow-slide" class="rightarrow" src="img/arrow-left.png">',
+     responsive: [
+          {
+        breakpoint: 1150,
+        settings: {
+         centerPadding: '120px',
+        }
+      },
+            {
+        breakpoint: 860,
+        settings: {
+            centerPadding: '80px',
+        }
+      },
+         {
+        breakpoint: 760,
+        settings: {
+            centerPadding: '40px',
+        }
+      },
+        {
+        breakpoint: 680,
+        settings: {
+            centerPadding: '0px',
+        }
+      },
+       {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '0px',
+        }
+      },
+       {
+        breakpoint: 440,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '0px',
+        }
+      },
+    ]
+  });
+  
+  
+  
 
   //HERO IMAGES FUNCTION
   var imageLoadTime, imageLoadStartTime, imageLoadEndTime, timeAfterStartTime;
@@ -151,7 +207,7 @@ $('document').ready(function(){
           var sourcemap = Array.prototype.map.call(gridImages, function(image){return image.attributes[1].nodeValue});
           function findsource (source) { return source == imagesrc }
           var res = sourcemap.findIndex(findsource);
-          return res
+          return res;
         }
 
         //left arrow functionality
@@ -187,107 +243,129 @@ $('document').ready(function(){
       };
 
       //SHOW SLIDER
-
-      var sliderLinks = document.getElementsByClassName('slider-link');
-      var showSlider = function (e) {
-        e.preventDefault();
-        var $slider = $('#slider');
-        var $app = $('#app')
-
-        if($app.attr('class')=='slidershowing'){
-        }
-
-        else{
-
-          function executeScript(url, callback){
-            var scr = document.createElement('script');
-            scr.src = url;
-            document.body.appendChild(scr);
-            callback();
-          }
-
-          $slider.fadeIn(2000);
-          //call script to make the slider work
-          executeScript("js/mainslick.js", function(){
-            $('.hiddenapp').removeClass('hiddenapp');
-            $app.hide().fadeIn(2000);
-            $('#app-border').hide().fadeIn(2500);
-            $app.addClass('slidershowing');
-          })
-
-        }
-
-
+      function Overlay(links, elem, closeButton) {
+          this.links = links;
+          this.elem = elem;
+          this.closeButton = closeButton;
+          this.active = false;
       }
 
-      Array.prototype.forEach.call(sliderLinks, function(link){link.addEventListener('click', showSlider)});
+      Overlay.prototype.init = function(){
+        console.log(this.elem);
+        var _ = this;
+        this.links.click(function(e){
+            e.preventDefault();
+            _.elem.removeClass('overlay--hidden');
+            $("body").css({"overflow":"hidden"});
+          })
+          console.log(this.closeButton);
+          this.closeButton.click(function(e){
+            e.preventDefault();
+            _.elem.addClass('overlay--hidden');
+            $("body").css({"overflow":"visible"});
+          })
+        };
+      
+
+      var sliderLinks = $('.slider-link');
+      var sliderElemOL = $('.slider-overlay');
+      var sliderClose = $('.slider-overlay .close-button');
+      var sliderOverlay = new Overlay(sliderLinks, sliderElemOL, sliderClose);
+      sliderOverlay.init();
+
+
 
       //LOAD ARTICLE
-      var articleLinks = document.getElementsByClassName('article-link');
-      var loadingBar = document.getElementsByClassName('loading-bar');
-      var $articleholder = $('#articleholder');
-      var $articleSource = $('#article-source').attr('data-src-article');
+      var $articleLinks = $('.article-link');
+      var $articleElemOL = $('.article-overlay');
+      var $articleClose = $('.article-overlay .close-button');
+      var $articleImg = $('#article');
+      var articleOverlay = new Overlay($articleLinks, $articleElemOL, $articleClose);
+      articleOverlay.init();
 
+      var $article2Links = $('.article2-link');
+      var $article2ElemOL = $('.article2-overlay');
+      var $article2Close = $('.article2-overlay .close-button');
+      var $article2Content = $('.article2__image');
+      var article2Overlay = new Overlay($article2Links, $article2ElemOL, $article2Close);
+      article2Overlay.init();
 
-
-      var showArticle = function(e){
-        e.preventDefault();
-        $body.css('overflow-y', 'hidden');
-
-        if($articleholder.attr('class') == 'active'){
-          $articleholder.fadeIn(1000);
-
-
-        }
-        else{
-          $articleholder.fadeIn(1000);
-          var article = new Image();
-          article.src = $articleSource;
-          var loadingInterval2 = setInterval(function(){replaceloadingBar('loading-bar2')}, 4000);
-
-          article.onload = function() {
-
-            $articleholder.append(article);
-            $articleholder.addClass('active');
-
-            var $articleImg = $('#articleholder img');
-
-            $articleImg.hide();
-
-            $('#loading-bar2').fadeOut(600, function(){
-              $articleImg.fadeIn(2000);
-              clearInterval(loadingInterval2);
-
-              //setup for zoom plugin
-              $articleImg
-              .wrap('<span style="display:inline-block"></span>')
-              .css('display', 'block')
-              .parent()
-              .zoom({
-                magnify: 1.5,
-                duration: 300,
-                touch: true,
-                on: "grab"
-              });
-            });
-          };
-
-        }
-
-
+      var $article2Left = $('.article2-buttons .leftarrow');
+      var $article2Right = $('.article2-buttons .rightarrow');
+      var articel2Src = ['img/article2_a.jpg', 'img/article2_b.jpg', 'img/article2_c.jpg'];
+      var article2Index = 0;
+      function article2Next(){
+        article2Index += 1;
+        article2Index == articel2Src.length ? article2Index = 0 : null;
+      }
+      function article2Prev(){
+        article2Index -= 1;
+        article2Index == -1 ? article2Index = (articel2Src.length - 1) : null;
       }
 
+      function applyNewSlide(){
+        $article2Content.each(function(index, image){
+          $(image).addClass('article2__image-hidden');
+        })
+
+        $($article2Content[article2Index])
+        .removeClass('article2__image-hidden');
+
+      }
+      function isMobile() {
+        try{ document.createEvent("TouchEvent"); return true; }
+        catch(e){ return false; }
+      }
+      if(!isMobile()){
+        $.each($article2Content, function(index, image){
+          $(image)
+          .wrap('<span style="display:inline-block"></span>')
+          .css('display', 'block')
+          .parent()
+          .zoom({
+            magnify: 0.6,
+            duration: 300,
+            touch: true,
+            on: "grab"
+          });
+        })
+      }
+
+      $article2Left.click(function(e){
+        e.preventDefault();
+        article2Prev();
+        applyNewSlide();
+      })
+      $article2Right.click(function(e){
+        e.preventDefault();
+        article2Next();
+        applyNewSlide();
+      })
 
 
+      // $article2Content
+      // .wrap('<span style="display:inline-block"></span>')
+      // .css('display', 'block')
+      // .parent()
+      // .zoom({
+      //   magnify: 1,
+      //   duration: 300,
+      //   touch: true,
+      //   on: "grab"
+      // });
 
-
-      Array.prototype.forEach.call(articleLinks, function(link) {link.addEventListener('click', showArticle)});
-      var closeArticleButton = document.getElementById('close-article');
-      closeArticleButton.addEventListener('click', function() {
-        $articleholder.fadeOut(800);
-        $body.css('overflow-y', 'auto');
+      //setup for zoom plugin
+      $articleImg
+      .wrap('<span style="display:inline-block"></span>')
+      .css('display', 'block')
+      .parent()
+      .zoom({
+        magnify: 1.5,
+        duration: 300,
+        touch: true,
+        on: "grab"
       });
-
+      
 
       //LAZY LOADING
       var lazyloading= function(callback){
