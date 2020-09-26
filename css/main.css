@@ -747,6 +747,9 @@ footer p{
 	.hideatwidth550{
 		display:none !important;
 	}
+	#header-bar{
+		height: 74px;
+	}
 	.modal-button{
 			font-size: 25px !important;
 		}
@@ -762,13 +765,14 @@ footer p{
 		grid-template-areas: ". info info ." ". address address ." !important;}
 	.info{
 		margin:0;
-		justify-content:end;
+		justify-content:center;
 		padding-right:5px;
 	}
 	.loading-bar{
 		width:45vw !important;
 		right:27.5vw !important;
 	}
+
 	footer{
 		background-position:0% 0% !important;
 	}
@@ -784,15 +788,29 @@ footer p{
 	.mid-background{
 		display:none;
 	}
+
+	#contact > div {
+		margin-left: 0;
+	}
+
+	#to-top {
+		top: 80px;
+	}
+
+	nav li:last-child { 
+		order: -1;
+	}
 }
 
 	@media (max-width:400px){
 		#article {
 			width:100%;
 		}
-		#header-bar{
-			height: 72px;
+
+		#contact {
+			width: 98%;
 		}
+
 		footer{
 			padding-top: 30px;
 		}
@@ -846,7 +864,7 @@ footer p{
 		}
 
 		#contact{
-			width:100%;
+			width:98%;
 			align-items: center;
 		}
 

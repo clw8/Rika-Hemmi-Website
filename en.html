@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Rika Hemmi（逸見吏佳）の手作りの羊毛フェルト服。北海道の羊毛は一本一本の繊維がからんで、布のようになる。">
+  <meta name="Rika Hemmi" content="へんみ・りかの羊毛フェルト服">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="favicon.png">
+
+
+
+  <style>
+  html{
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
+    -ms-animation: fadeIn ease 3s;
+  }
+
+  .fadeIn{
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
+    -ms-animation: fadeIn ease 3s;
+  }
+
+  @keyframes fadeIn{
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+
+  /*ESSENTIAL CSS*/
+  html body {width:100%; background-color: rgb(255, 248, 245); height:100%; min-height: 100%; margin: 0;font-family: Helvetica;}
+  main{width:100%; margin:auto; height:100%;}#
+  ul{padding:0; list-style:none; text-align: left;}
+  header{overflow:auto; margin:auto;}
+  #header-bar{
+    height:65px; margin-top:5px;}
+    #logo{height:60px;  margin-top:5px; margin-bottom: 5px;}
+    #herowrapper{ background-repeat: no-repeat;
+      margin:auto;
+      height:85.5vh;
+      background-position:center top;
+      border-radius:2px;
+      background-size:cover;}
+      img#hero{width:100%; margin:auto; display:none;}
+
+      /*NAV ELEMENT*/
+      nav{float:right; padding:0px; }
+      nav li{ font-size:16px; display:inline-block; text-align:right; padding-right:2vw}
+      nav ul {list-style:none; padding:0;margin:2vh; display:flex; flex-flow:row wrap;justify-content:flex-end; margin-top: 20px; }
+      header h1{float:left; margin:0;display:inline;  }
+      a{text-decoration:none; color:black;}
+      a:hover{cursor:pointer; color:LightBlue; }
+
+      .loading-bar{
+        width:34vw;
+        margin:auto;
+        top: 45vh;
+        right:33vw;
+        position:absolute;
+        z-index:999;
+      }
+
+      .loading-bar--hidden {
+		opacity: 0;
+		transition: opacity 0.5s ease;
+        }
+
+      .main-wrapper {border-radius: 2px;  margin:auto;margin-bottom:1vh; padding-bottom:1px;}
+      .border{width:75%; /*border-bottom: 1px solid;*/ margin:auto;}
+      .border img {margin:auto; width:100%; position:relative; top:7px;}
+      .widthsetter{ width: 85%; max-width:1052px;margin:auto; }
+    </style>
+    <script>
+
+    //loading-bar repetitions
+    function replaceloadingBar(loadingbar){
+
+      var loadingBar= document.getElementById(loadingbar);
+
+      var newone= loadingBar.cloneNode(true);
+      loadingBar.parentNode.replaceChild(newone, loadingBar);
+
+
+    }
+    var loadingInterval = setInterval(function(){replaceloadingBar('loading-bar1')}, 4000);
+
+  </script>
+  <title>Rika Hemmi</title>
+</head>
+
+
+<body class="fadeIn">
+  <header>
+    <div id="header-bar" class="widthsetter">
+      <h1><img id="logo" src="img/rika-hemmi.png" alt="逸見吏佳"></h1>
+      <nav>
+        <ul>
+          <li><a href="#fuku">Fashion</a></li>
+          <li><a href="#gridwrapper">Living</a></li>
+          <li><a href="#contact-anchor">About</a></li>
+          <li><a href="index.html">JP</a></li>
+
+        </ul>
+      </nav>
+    </div>
+    <div id="loading-bar1" class="loading-bar">
+
+      <object type="image/svg+xml" data="templates/loading-bar.svg" class="logo">
+        Loading
+      </object>
+
+    </div>
+
+    <div id="herowrapper" class="widthsetter">
+      <img id="starting-image"  alt="りかへんみ"
+      srcset="img/IMG_0073.jpg 1280w, img/IMG_0073b.jpg 768w"
+      sizes="(max-width: 769px) 768px, (min-width: 770px) 1052px"
+      src="img/IMG_0073.jpg" style="display:none;">
+    </div>
+  </header>
+  <main>
+    <section class="main-wrapper widthsetter">
+
+      <div class= "border">
+        <img data-src="img/wool.png" alt="rikahemmi"/>
+      </div>
+
+      <div id="rika-text">
+        <p>
+            In 2004, Rika decided to move to Bifuka, Hokkaido, to pursue a lifestyle closer to nature and to bring up her children away from the bustle of the city. Hokkaido is one of the only places in Japan with sheep, and so Rika’s foray into crafting with wool developed naturally upon seeing that some of the local wool was going to waste. Since then, she has diligently crafted clothes, bags, shoes, shoes and more from a variety of different sheep fleeces.
+        </p>
+
+      </div>
+
+
+
+      <link rel="stylesheet" href="css/main.css">
+
+      <section id="fuku" class="grid-container">
+        <div id= "felt-garment-1" class="grid-image-container">
+          <div id="garment-1-image" data-background= "img/IMG_1813.jpg" class="grid-image lazy-load" >
+            <!-- <img src="img/IMG_1813.jpg" class="lazy-load-fallback"> -->
+          </div>
+        </div>
+        <div id= "felt-fabric-2" class="grid-image-container">
+          <div id="fabric-2-image" data-background= "img/IMG_3040.jpg" class="grid-image lazy-load" >
+          </div>
+        </div>
+        <div id= "felt-garment-2" class="grid-image-container">
+          <div id="garment-2-image" data-background= "img/IMG_0284.jpg" class="grid-image lazy-load">
+          </div>
+        </div>
+        <div id= "felt-coat-2"  class="grid-image-container">
+          <div id="coat-2-image" data-background= "img/IMG_0316.jpg" class="grid-image lazy-load">
+          </div>
+        </div>
+        <div id="felt-coat-1" class="grid-image-container">
+          <div id="coat-1-image" data-background= "img/IMG_0073.jpg" class="grid-image lazy-load" >
+          </div>
+        </div>
+        <div id= "felt-coat-3" class="grid-image-container ">
+          <div id="coat-3-image" data-background= "img/IMG_0345b.jpg" class="grid-image image-position-fix lazy-load">
+          </div>
+        </div>
+        <div  id= "felt-bag-2" class="grid-image-container">
+          <div id="bag-2-image" data-background= "img/IMG_0271.jpg" class="grid-image lazy-load">
+          </div>
+        </div>
+        <div id= "felt-bag-1" class="grid-image-container">
+          <div id="bag-1-image" data-background= "img/IMG_0266.jpg" class="grid-image lazy-load">
+          </div>
+        </div>
+        <div id= "felt-bag-3" class="grid-image-container">
+          <div id="bag-3-image" data-background= "img/IMG_0268.jpg" class="grid-image lazy-load">
+          </div>
+        </div>
+        <div id= "felt-bag-4" class="grid-image-container">
+          <div id="bag-4-image" data-background= "img/IMG_0275.jpg" class="grid-image lazy-load">
+          </div>
+        </div>
+        <div id= "felt-fabric-1" class="grid-image-container">
+          <div id="fabric-1-image" data-background= "img/IMG_0278.jpg" class="grid-image lazy-load" >
+          </div>
+        </div>
+        <div id= "felt-shoes-2" class="grid-image-container">
+          <div  id="shoes-2-image" data-background= "img/IMG_7115.jpg" class="grid-image lazy-load">
+          </div>
+        </div>
+        <div id= "felt-shoes-1" class="grid-image-container">
+          <div id="shoes-1-image" data-background= "img/IMG_0350.jpg" class="grid-image lazy-load">
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+  <div class="mid-background">
+    <img id="hokkaido_landscape" data-src="img/hokkaido_landscapec.jpg" alt="rikahemmi 自然">
+  </div>
+
+
+
+  <div id="gridwrapper">
+    <h2>Living</h2>
+    <div class="widthsetter">
+      <div class= "border">
+        <img data-src="img/wool.png"/>
+      </div>
+    </div>
+    <section id="second-half-grid">
+
+      <div id="seikatsu" class="hideatwidth550">
+        <img data-src="img/IMG_1080b.jpg" class="hideatwidth510" alt="北海道と羊">
+      </div>
+
+      <div class="flex-wrapper2">
+        <div class="itemwrapper">
+          <a class="article-link" href="">
+            <img data-src="img/article-small.jpg" alt="りかへんみ服">
+          </a>
+          <p><a class="article-link" href="">
+              Article from 2018 (Japanese)
+          </a></p>
+        </div>
+        <div class="itemwrapper">
+          <a class="slider-link" href="#slideranchor">
+            <img  data-src="img/IMG_7390-small.jpg" alt="フェルト服の作り方">
+          </a>
+          <p> <a class="slider-link" href="#slideranchor">Process for making felt clothes (photos)</a></p>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div id="slideranchor">
+  </div>
+  <div class= "hiddenapp margintop" id="app-border">
+    <div class= "border">
+      <img data-src="img/wool.png"/>
+    </div>
+  </div>
+  <div id="app" class="hiddenapp">
+
+    <div id="slider">
+      <div class="slick">
+        <div class="slides">
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_7397.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_1379.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_3192.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_3196.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_3222.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_0740.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_0756.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_1296.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_4857.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_1051.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_1302.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_2004.jpg"/>
+          </div>
+          <div>
+            <img class="slickimage" data-src-slider="img/second_half/IMG_1791.jpg"/>
+          </div>
+        </div>
+        <div class="pagination"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="widthsetter margintop">
+    <div class= "border" >
+      <img data-src="img/wool.png" alt="へんみりか"/>
+    </div>
+  </div>
+
+  <div id="contact-anchor" class="margintop">
+    <h2>About</h2>
+    <div class="contact-wrapper">
+      <div class="flex-wrapper1">
+
+        <img data-src="img/IMG_7242b.jpg" id="contact-image" alt="毛ウール">
+
+        <div id="contact">
+          <div>
+            <div id="wool-text"><h3>Where I get my wool</h3><p>
+                I mainly source my wool from sheep that live nearby (Hokkaido, Bifuka), although sometimes we do get wool from overseas.
+              Everything from the preparation of the wool to the arrangement of the wool into the final design is done by hand.
+              </p></div>
+              <div>
+                <h3>Contact</h3>
+                <p>If you are interested in buying, or just have a few questions, please get in contact via below:</p>
+                <p><a href="mailto:soseisoudou@gmail.com"><em>soseisoudou@gmail.com</em></a>　</p>
+                <p><a href="https://www.soseisoudou.jp/"><em>https://www.soseisoudou.jp/</em></a>　</p>
+                <p><a href="https://www.facebook.com/soseisoudou/"><img data-src="img/fb-icon.png" alt="フェースブック">  Facebook </a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="articleholder">
+
+      <span id="close-article" class="modal-button">&times;</span>
+
+
+      <div id="loading-bar2" class="loading-bar">
+        <object type="image/svg+xml" data="templates/loading-bar.svg" class="logo">
+          Loading
+        </object>
+      </div>
+      <div id="article-source" data-src-article="img/article.jpg" alt="記事"></div>
+    </div>
+
+    <div class="modal-popup closed">
+      <span id="close-button" class="modal-button">&times;</span>
+      <div id="arrow-grid">
+        <span class="modal-button"><img id="left-arrow-modal" data-src="img/arrow-left.png" alt="Left Arrow"></span>
+        <div id="modal-content" class="modal-content">
+        </div>
+
+        <span  class="modal-button"><img id="right-arrow-modal" class= "rightarrow" data-src="img/arrow-left.png" alt="Right Arrow"></span>
+      </div>
+
+    </div>
+
+
+    <a id="to-top" href='#header-bar'><span><img data-src="img/arrow-left.png" class="uparrow" alt="go to top"></span></a>
+    <footer class="lazy-load" data-background="img/footer.png">
+      <div id="footer-div">
+        <div class="half-width info">
+          <img id='rika-logo-footer' data-src="img/rika-hemmi.png" alt="りかへんみ"><p><span class='bold'>Rika Hemmi </span></p>
+        </div>
+        <div class="half-width address">
+          <p>Sosei Soudou（粗清草堂)</p>
+          <p>285-5 Penke, Bifuka </p>
+          <p>Hokkaido, Nakagawa</p>
+          <p>〒098-2207</p>
+          <p>Japan</p>
+        </div>
+
+
+      </div>
+
+    </footer>
+
+  </main>
+  <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/secondary.css">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script> -->
+  <script src="js/main.js"></script>
+  <script src="js/vendor/slick.min.js"></script>
+  <script src="js/vendor/jquery.zoom.min.js"></script>
+
+  <script>
+  window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+  ga('create','UA-XXXXX-Y','auto');ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+</html>
+
